@@ -3,134 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="">
-    <script src="script.js"defer></script>
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="rps.css">
+    <script src="rps.js"defer></script>
 </head>
-<body>
-    
 
+<body>
+
+  <div class="game-over-div">
+    <img id="gameover" class="crown-animate" src="rps-images/crown.png" alt="">
+    <img class="gameover-fighter" src="rps-images/fighterman.png" alt="">
+    <button  class="reset"><img src="rps-images/reset.png" alt=""></button>
+  </div>
+  
+  
+  <div class="body">
+    <h1 class="h1">Rock, Paper, Scissors</h1>
+
+    <div class="fighter-div">
+      <p class="typewriter" class="fighter-p">Five points wins. Choose your fighter...</p>
+      <div id="fighter">
+        <button id="chad"><img class="chad" src="rps-images/fighterman.png" alt="Chad"></button>
+        <button id="stacy"><img class="stacy" src="rps-images/stacy.png" alt="Stacy"></button>
+      </div>
+    </div>
+
+
+    <div class="opponent">
+      <p class="typewriter">Choose your opponent...</p>  
+      <div id="opponent">
+        <button id="comp-one"><img class="comp-one" src="rps-images/computer.png" alt="computer"></button>
+        <button id="comp-two"><img class="comp-two" src="rps-images/comp-2.png" alt="computer"></button>
+        <button id="comp-three"><img class="comp-three"  src="rps-images/comp-3.png" alt="computer"></button>
+        </div>
+    </div>
+
+    <div class="weapon-div">
+      <p class="typewriter">Choose your weapon...</p>
+      <div id="choose">
+        <button id="rock"><img class="rock" src="rps-images/rock.png" alt="Rock"></button>
+        <button id="paper"><img class="paper" src="rps-images/paper.png" alt="Piece of paper"></button>
+        <button id="scissors"><img class="scissors"  src="rps-images/scissors.png" alt="Scissors"></button>  
+      </div>
+      
+    </div>
+
+    <div class="computer-div">
+      <p class="typewriter-gif">Computer chooses...</p>
+      <div id="comp-choose">
+        <img id="calculating" src="" alt="Calculation gif">  
+      </div>
+    </div>
+
+    <div class="standoff">
+      <p> </p>
+      <img class="standoff-left"  src="rps-images/spacer.png" alt="">
+      <div class="standoff-middle"><p class="flashing-word"></p></div>
+      <img class="standoff-right"  src="rps-images/spacer.png" alt="">
+    </div>
+
+    <div id="player">
+      <div class="fighter-box"></div>
+      <div class="weapon-box"></div>
+      <div class="middle"></div>
+      <div class="comp-weapon-box"></div>
+      <div class="comp-box"></div>
+     </div>
+
+    <div id="computer">
+      
+    <div class="left">
+      <div class="left-one"><img src="rps-images/crown.png" alt=""></div>
+      <div class="left-two"><img src="rps-images/crown.png" alt=""></div>
+      <div class="left-three"><img src="rps-images/crown.png" alt=""></div>
+      <div class="left-four"><img src="rps-images/crown.png" alt=""></div>
+      <div class="left-five"><img src="rps-images/crown.png" alt=""></div>
+    </div>
+    
+    <div class="right">
+      <div class="right-five"><img src="rps-images/term.png" alt=""></div>
+      <div class="right-four"><img src="rps-images/term.png" alt=""></div>
+      <div class="right-three"><img src="rps-images/term.png" alt=""></div>
+      <div class="right-two"><img src="rps-images/term.png" alt=""></div>
+      <div class="right-one"><img src="rps-images/term.png" alt=""></div>
+    </div>
+
+  </div> 
 
 </body>
+
 </html>
 
 
 
-<!-- 
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>Number guessing game</title>
-
-    <style>
-      html {
-        font-family: sans-serif;
-      }
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
-      .lastResult {
-        color: white;
-        padding: 3px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1>Number guessing game</h1>
-
-    <p>
-      We have selected a random number between 1 and 100. See if you can guess
-      it in 10 turns or less. We'll tell you if your guess was too high or too
-      low.
-    </p>
-
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="text" id="guessField" class="guessField" />
-      <input type="submit" value="Submit guess" class="guessSubmit" />
-    </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-    </div>
-
-    <script>
-      let randomNumber = Math.floor(Math.random() * 100) + 1;
-
-      const guesses = document.querySelector(".guesses");
-      const lastResult = document.querySelector(".lastResult");
-      const lowOrHi = document.querySelector(".lowOrHi");
-      const guessSubmit = document.querySelector(".guessSubmit");
-      const guessField = document.querySelector(".guessField");
-      
-      let guessCount = 1;
-      let resetButton;
-
-      function checkGuess() {
-        const userGuess = Number(guessField.value);
-        if (guessCount === 1) {
-          guesses.textContent = "Previous guesses: ";
-        }
-        guesses.textContent += userGuess + " ";
-
-        if (userGuess === randomNumber) {
-          lastResult.textContent = "Congratulations! You got it right!";
-          lastResult.style.backgroundColor = "green";
-          lowOrHi.textContent = "";
-          setGameOver();
-        } else if (guessCount === 10) {
-          lastResult.textContent = "!!!GAME OVER!!!";
-          setGameOver();
-        } else {
-          lastResult.textContent = "Wrong!";
-          lastResult.style.backgroundColor = "red";
-          if (userGuess < randomNumber) {
-            lowOrHi.textContent = "Last guess was too low!";
-          } else if (userGuess > randomNumber) {
-            lowOrHi.textContent = "Last guess was too high!";
-          }
-        }
-        guessCount++;
-        guessField.value = "";
-        guessField.focus();
-      }
-      guessSubmit.addEventListener("click", checkGuess);
-
-      function setGameOver() {
-        guessField.disabled = true;
-        guessSubmit.disabled = true;
-        resetButton = document.createElement("button");
-        resetButton.textContent = "Start new game";
-        document.body.appendChild(resetButton);
-        resetButton.addEventListener("click", resetGame);
-      }
-
-      function resetGame() {
-        guessCount = 1;
-
-        const resetParas = document.querySelectorAll(".resultParas p");
-        for (const resetPara of resetParas) {
-          resetPara.textContent = "";
-        }
-        resetButton.parentNode.removeChild(resetButton);
-
-        guessField.disabled = false;
-        guessSubmit.disabled = false;
-        guessField.value = "";
-        guessField.focus();
-
-        lastResult.style.backgroundColor = "white";
-
-        randomNumber = Math.floor(Math.random()*100) + 1;
-      } console.log(randomNumber);
-    </script>
-  </body>
-</html> -->

@@ -1,0 +1,313 @@
+body {
+    text-align: center;
+}
+
+
+
+#choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    gap: 32px;
+    align-items: center;
+    max-width: 100%;
+   
+}
+
+#fighter, #opponent  {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    gap: 32px;
+    max-width: 100%;    
+}
+
+    
+
+
+
+
+
+ button {
+    border: none;
+  background: none; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+  flex-shrink: 1;
+    min-width: 0; 
+  overflow: hidden; 
+}
+
+img {
+    width: auto; 
+    height: 125px; 
+    flex-shrink: 1;
+}
+
+#fighter img {
+    width: auto; 
+    height: 180px; 
+   
+}
+
+.fighter-box {
+    width: 20%; 
+    height: 180px;  
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.fighter-box img {
+    height: 90%;
+    object-fit: cover;    
+}
+
+.comp-box {
+    width: 20%; 
+    height: 180px;  
+    display: flex; 
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.comp-box img {
+    height: 80%;
+}
+
+button:hover {
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+.scissors, .comp-scissors {
+    transform: scale(1.2);   
+}
+
+#player  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    gap: 32px;
+    box-sizing: border-box;
+    height: 180px;
+    width: auto;  
+    
+}    
+
+#computer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    gap: 32px;
+    box-sizing: border-box;
+    height: 60px;
+    width: auto
+}
+
+.left {
+    margin-right: auto;
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.right {
+    margin-left: auto;
+    display: flex;
+  }
+
+  .left-one, .left-two, .left-three, .left-four, .left-five, 
+  .right-one, .right-two, .right-three, .right-four, .right-five {
+    display: none;
+  }
+
+  .left img {  
+    width: 50px;
+    height: auto;
+  }
+
+  .right img {
+    width: auto;
+    height: 50px;
+    padding: 0 6px;
+  }
+
+.middle {
+    margin: auto;
+}
+
+.typewriter {
+    overflow: hidden; 
+    border-right: .0em solid black; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+    margin-bottom: 32px;
+  }
+
+.typewriter-gif {
+    overflow: hidden; 
+    border-right: .0em solid black; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 4.1s steps(80, end),
+      blink-caret .75s step-end infinite;
+    margin-bottom: 24px;
+}
+  
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
+
+.weapon-div, .opponent, .fighter {
+    display: none;
+    margin-top: 32px;
+    box-sizing: border-box;
+    height: 200px;
+    width: auto;
+}
+  
+.computer-div {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 200px;
+    width: auto;
+    margin-top: 32px;    
+}
+
+
+
+
+
+.comp-rock, .comp-paper, .comp-scissors {
+    display: none;
+}
+
+@keyframes moveLeft {
+    from { left: -200px; }
+    to { left: 0px; }
+}
+
+.chad-animate {
+    position: relative;
+    animation-name: moveLeft;
+    animation-duration: 900ms;
+    animation-fill-mode: forwards;
+    margin-right: auto;    
+}
+
+@keyframes moveRight {
+    from { right: -200px; }
+    to { right: 0px; }
+}
+
+.opp-animate {
+    position: relative;
+    animation-name: moveRight;
+    animation-duration: 900ms;
+    animation-fill-mode: forwards;
+    margin-left: auto;
+}
+
+@keyframes moveTop {
+    from { top: -40px; }
+    to { top: 20px; }
+}
+
+.crown-animate {
+    position: relative;
+    animation-name: moveTop;
+    animation-duration: 900ms;
+    animation-fill-mode: forwards;
+    margin-bottom: auto;
+}
+
+.fighter-box {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.standoff {
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    height: 200px;
+    width: auto;
+    margin-top: 32px;    
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .flashing-word {
+    animation: blink 1s infinite;
+  }
+
+  .game-over-div img {  
+    width: 150px;
+    height: auto;
+    object-fit: cover;  
+    text-align: center;
+  }
+
+  #gameover {
+    margin-bottom: -10px;
+    z-index: 2;  
+  }
+
+  .gameover-fighter {
+    z-index: 1;
+  }
+
+  .game-over {
+   border: 0;
+   margin: 0;
+   padding: 0;
+  }
+
+  .game-over-div {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 5%;
+  }
+
+  .game-over-div button {
+    margin-top: 3%;
+  }
+
+  #comp-one, #comp-two, #comp-three {
+    flex-shrink: 1;
+  }
+
+  
+
+  
+
+
+
+  
+
