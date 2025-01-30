@@ -415,13 +415,12 @@ if (computerScore >= 5){
                 playerMiddle.removeChild(explosionGif);
                 playerMiddle.removeChild(compWeapon);
                 }
-});
+            });
 
-  })
+        })
 
-});
+    });
     
-
 });
 
 
